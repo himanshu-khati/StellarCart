@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { clearCart, removeItem } from "../utils/cartSlice";
 import { v4 as uuidv4 } from "uuid";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const ShoppingCartLayout = () => {
   const cartItems = useSelector((store) => store.cart.items);
+  const navigate = useNavigate();
   const [totals, setTotals] = useState({ totalProducts: 0, grandTotal: 0 });
   const dispatch = useDispatch();
 
@@ -15,6 +16,15 @@ const ShoppingCartLayout = () => {
 
   const handleClearCart = () => {
     dispatch(clearCart());
+  };
+
+  const handleContinueShopping = (e) => {
+    e.preventDefault();
+    navigate("/");
+  };
+
+  const handleCheckout = () => {
+    navigate("/checkout", { state: { totals } });
   };
 
   useEffect(() => {
@@ -87,8 +97,11 @@ const ShoppingCartLayout = () => {
           </tbody>
         </table>
         <div className="w-full flex justify-between  p-7">
-          <button className="border w-72 p-4 bg-[#f0e0ff] rounded-full hover:bg-[#a749ff] hover:text-white ">
-            <Link to="/">CONTINUE SHOPPING</Link>
+          <button
+            className="border w-72 p-4 bg-[#f0e0ff] rounded-full hover:bg-[#a749ff] hover:text-white "
+            onMouseDown={handleContinueShopping}
+          >
+            CONTINUE SHOPPING
           </button>
           <button
             className="border w-72 p-4 bg-[#f0e0ff] rounded-full hover:bg-[#a749ff] hover:text-white "
@@ -115,7 +128,10 @@ const ShoppingCartLayout = () => {
               <span className="ms-4">${totals.grandTotal}</span>
             </p>
             <div className="w-full  flex justify-end mt-2">
-              <button className="border w-72 p-4  rounded-full bg-[#a749ff] text-white hover:bg-gray-800 ">
+              <button
+                className="border w-72 p-4  rounded-full bg-[#a749ff] text-white hover:bg-gray-800 "
+                onMouseDown={handleCheckout}
+              >
                 PROCEED TO CHECKOUT
               </button>
             </div>

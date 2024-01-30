@@ -5,6 +5,7 @@ import ProductLayout from "./layouts/ProductLayout";
 import ShoppingCartLayout from "./layouts/ShoppingCartLayout";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
+import CheckOutLayout from "./layouts/CheckOutLayout";
 
 function App() {
   const router = createBrowserRouter([
@@ -24,12 +25,16 @@ function App() {
           path: "/cart",
           element: <ShoppingCartLayout />,
         },
+        {
+          path: "/checkout",
+          element: <CheckOutLayout />,
+        },
       ],
     },
   ]);
   return (
     <Provider store={appStore}>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </Provider>
   );
 }
