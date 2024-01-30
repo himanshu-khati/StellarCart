@@ -5,7 +5,7 @@ import ReactStars from "react-stars";
 const Item = ({ productInfo }) => {
   if (!productInfo) return null;
   return (
-    <div className="w-3/12 my-4 ">
+    <div className="w-full lg:w-3/12 my-4 border-b lg:border-none ">
       <div className="flex  flex-col justify-center items-center mx-4 ">
         <Link to={`/product/${productInfo.id}`}>
           <div className=" w-full flex justify-center items-center rounded-xxl ">

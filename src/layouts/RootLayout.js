@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 const RootLayout = () => {
   return (
     <main className="flex min-h-screen flex-col ">
-      <div className="container mx-auto px-4 sm:px-12 relative ">
+      <div className="container mx-auto  sm:px-12 relative ">
         <Navbar />
         <ToastContainer position="top-center" autoClose={3000} />
         <Outlet />

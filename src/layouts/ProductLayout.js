@@ -4,7 +4,7 @@ import ReactStars from "react-stars";
 import { addItem } from "../utils/cartSlice";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import {  toast } from "react-toastify";
+import { toast } from "react-toastify";
 const ProductLayout = () => {
   const { productId } = useParams();
   const productInfo = useSingleProduct(productId);
@@ -30,11 +30,11 @@ const ProductLayout = () => {
   const { title, price, description, category, image, rating } = productInfo;
 
   return (
-    <div className="w-full  p-10 flex">
-      <div className="w-6/12  flex justify-center items-center p-5 ">
+    <div className="w-full  lg:p-10 flex lg:flex-row flex-col">
+      <div className="lg:w-6/12  flex justify-center items-center p-5 ">
         <img src={image} alt="" className="h-[400px] p-14" />
       </div>
-      <div className="w-6/12  p-5 font-poppins flex flex-col gap-4">
+      <div className=" w-full lg:w-6/12  p-5 font-poppins flex flex-col gap-4">
         <h1 className="text-2xl">{title}</h1>
         <h2 className="text-2xl text-[#fe5252]">${price}</h2>
         <ReactStars count={5} value={rating.rate} size={25} edit={false} />

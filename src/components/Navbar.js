@@ -12,14 +12,14 @@ const NavBar = () => {
     setNoOfItems(items);
   }, [cartItems]);
   return (
-    <nav className="w-full mx-auto shadow-b px-5 py-5 sticky top-0 bg-white z-50">
+    <nav className="w-full mx-auto shadow-b p-4 lg:p-5  sticky top-0 bg-white z-50">
       <div className="flex justify-between items-center">
-        <div className="text-3xl font-bold tracking-wider text-[#a749ff] ">
+        <div className=" text-xl font-semibold lg:text-3xl lg:font-bold tracking-wider text-[#a749ff] ">
           <Link to="/">STELLARCART</Link>
         </div>
         <div className="flex">
           <Link to="/cart">
-            <ShoppingBagIcon className="h-8 w-8 text-[#a749ff]" />
+            <ShoppingBagIcon className=" h-7 w-7 lg:h-8 lg:w-8 text-[#a749ff]" />
           </Link>
           <sup className="font-semibold text-red-600 text-sm">{noOfItems}</sup>
         </div>

@@ -14,8 +14,7 @@ const Collection = () => {
   }, [dispatch, products]);
   if (!products) return null;
   return (
-    <div className="w-full flex flex-wrap  justify-center py-10 ">
-      
+    <div className="w-full flex flex-wrap  px-4 py:5  lg:px-0  justify-center lg:py-10 ">
       {products.map((data) => (
         <Item key={data.id} productInfo={data} />
       ))}

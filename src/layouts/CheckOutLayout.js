@@ -8,7 +8,7 @@ const CheckOutLayout = () => {
   if (!totals) return null;
   console.log(totals);
   return (
-    <div className="w-full flex ">
+    <div className="w-full flex lg:flex-row flex-col  ">
       <Form />
       <CheckoutSummary totals={totals} />
     </div>

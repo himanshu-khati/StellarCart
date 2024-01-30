@@ -16,7 +16,7 @@ const CheckoutSummary = ({ totals }) => {
     notify();
   };
   return (
-    <div className="w-6/12  flex flex-col font-poppins mx-auto p-8">
+    <div className=" w-full p-4 lg:w-6/12  flex flex-col font-poppins mx-auto lg:p-8">
       <h2 className="text-2xl mb-4 ">Your Order</h2>
       <div className="w-full border p-7 flex flex-col gap-5 bg-[#f0e0ff]">
         <p className=" flex justify-between border-b border-gray-400  py-5">

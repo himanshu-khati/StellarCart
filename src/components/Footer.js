@@ -5,7 +5,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className=" text-gray-800 border-t p-5 w-full">
-      <div className="container mx-auto text-center">
+      <div className=" text-center">
         <p className="text-sm">
           Designed and Developed by
           <span className="text-[#a749ff] "> Himanshu Khati</span>

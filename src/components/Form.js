@@ -18,7 +18,7 @@ const Form = () => {
   };
 
   return (
-    <div className=" mx-auto p-8 font-poppins w-6/12   ">
+    <div className=" mx-auto p-4 lg:p-8 font-poppins lg:w-6/12 w-full   ">
       <h2 className="text-2xl  mb-4 ">Shipping Details</h2>
       <form>
         <div className="mb-4">
