@@ -25,4 +25,10 @@ Welcome to StellarCart, an ecommerce web project built using Create React App, T
    ```
 3. Install dependencies: `npm install`
 4. Start the development server: `npm start`
-5. Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the application.  
+5. Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the application.
+
+## Demo
+Check out the live demo hosted on [stellarcart.web.app.] (https://stellarcart.web.app.)
+
+## Contributing
+Contributions are welcome!
