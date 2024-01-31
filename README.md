@@ -21,7 +21,7 @@ You can view the live demo of the project at [stellarcart.web.app](https://stell
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/himanshu-khati/stellarcart.git
+   git clone https://github.com/himanshu-khati/StellarCart.git
    cd stellarcart
    ```
 2. Install dependencies: `npm install`
