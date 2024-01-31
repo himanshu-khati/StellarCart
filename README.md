@@ -1,6 +1,7 @@
 # StellarCart - Ecommerce Web Project
 
 Welcome to StellarCart, an ecommerce web project built using Create React App, Tailwind CSS, FakeStoreAPI, Redux Toolkit, and React Router DOM.
+You can view the live demo of the project at [stellarcart.web.app](https://stellarcart.web.app).
 
 ## Features
 
@@ -28,7 +29,7 @@ Welcome to StellarCart, an ecommerce web project built using Create React App, T
 5. Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the application.
 
 ## Demo
-Check out the live demo hosted on [stellarcart.web.app.](https://stellarcart.web.app.)
+Check out the live demo hosted on [stellarcart.web.app](https://stellarcart.web.app)
 
 ## Contributing
 Contributions are welcome!
