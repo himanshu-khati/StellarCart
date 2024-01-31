@@ -20,7 +20,7 @@ Welcome to StellarCart, an ecommerce web project built using Create React App, T
 
 1. Clone the repository:
    ```git clone https://github.com/your-username/stellarcart.git
-   cd stellarcart```
+   cd stellarcart
 2. Install dependencies: `npm install`
 3. Start the development server: `npm start`
 4. Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the application.  
