@@ -1,15 +1,26 @@
 import { useEffect, useState } from "react";
-
+import { FAKESTORE_URL } from "../utils/constants";
 const useFakeStoreApi = () => {
   const [products, setProducts] = useState(null);
+  const [error, setError] = useState(null);
+
   const getAllProducts = async () => {
-    const response = await fetch("https://fakestoreapi.com/products?limit=20");
-    const json = await response.json();
-    setProducts(json);
+    try {
+      const response = await fetch(FAKESTORE_URL);
+      if (!response.ok) {
+        throw new Error(`Error fetching product: ${response.status}`);
+      }
+      const json = await response.json();
+
+      setProducts(json);
+    } catch (error) {
+      setError(error.message);
+    }
   };
+
   useEffect(() => {
     getAllProducts();
   }, []);
-  return products;
+  return { products, error };
 };
 export default useFakeStoreApi;

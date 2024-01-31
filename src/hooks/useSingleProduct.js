@@ -1,20 +1,30 @@
 import { useEffect, useState } from "react";
+import { GETSINGLEPRODUCT_URL } from "../utils/constants";
 
 const useSingleProduct = (productId) => {
   const [productInfo, setProductInfo] = useState(null);
-  const getSingleProduct = async () => {
-    const response = await fetch(
-      `https://fakestoreapi.com/products/${productId}`
-    );
-    const json = await response.json();
+  const [error, setError] = useState(null);
 
-    setProductInfo(json);
+  const getSingleProduct = async () => {
+    try {
+      const response = await fetch(GETSINGLEPRODUCT_URL(productId));
+
+      if (!response.ok) {
+        throw new Error(`Error fetching product: ${response.status}`);
+      }
+
+      const json = await response.json();
+      setProductInfo(json);
+    } catch (error) {
+      setError(error.message);
+    }
   };
+
   useEffect(() => {
     getSingleProduct();
   }, [productId]);
 
-  return productInfo;
+  return { productInfo, error };
 };
 
 export default useSingleProduct;

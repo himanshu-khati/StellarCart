@@ -4,6 +4,7 @@ import { TrashIcon } from "@heroicons/react/24/solid";
 import { clearCart, removeItem } from "../utils/cartSlice";
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
+import EmptyCart from "../components/EmptyCart";
 const ShoppingCartLayout = () => {
   const cartItems = useSelector((store) => store.cart.items);
   const navigate = useNavigate();
@@ -26,6 +27,9 @@ const ShoppingCartLayout = () => {
   const handleCheckout = () => {
     navigate("/checkout", { state: { totals } });
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     const totalProducts = cartItems.reduce(
@@ -40,7 +44,7 @@ const ShoppingCartLayout = () => {
     setTotals({ totalProducts, grandTotal });
   }, [cartItems]);
 
-  if (cartItems.length === 0) return null;
+  if (cartItems.length === 0) return <EmptyCart />;
   return (
     <div className=" p-2 lg:p-5 w-full">
       <h1 className="font-poppins text-xl  my-5">Your Cart Items</h1>

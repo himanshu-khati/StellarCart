@@ -5,9 +5,10 @@ import { addItem } from "../utils/cartSlice";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
+import ProductLayoutShimmer from "../components/shimmer/ProductLayoutShimmer";
 const ProductLayout = () => {
   const { productId } = useParams();
-  const productInfo = useSingleProduct(productId);
+  const {productInfo} = useSingleProduct(productId);
   const dispatch = useDispatch();
   const notify = () => toast("Added To Cart");
 
@@ -25,7 +26,7 @@ const ProductLayout = () => {
     notify();
   };
 
-  if (!productInfo) return null;
+  if (!productInfo) return <ProductLayoutShimmer />;
 
   const { title, price, description, category, image, rating } = productInfo;
 
